@@ -5,7 +5,7 @@ export default function NavBar() {
     <nav className="NavBar">
       <ul className="menu">
         <li>
-          <NavLink to="/">Home</NavLink>
+          <NavLink to="/">Bitcoin Exchange</NavLink>
         </li>
         <li>
           <NavLink to="/calculator">Calculator</NavLink>
@@ -14,7 +14,6 @@ export default function NavBar() {
           <NavLink to="/bigcats">Big Cats</NavLink>
         </li>
       </ul>{" "}
-      {/* ++ Add another page with route and component */}
     </nav>
   );
 }
