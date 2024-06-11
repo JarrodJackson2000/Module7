@@ -1,4 +1,4 @@
-import MyMoodProvider from "./CurrentMood";
+import { MyMoodProvider } from "./CurrentMood";
 import NavBar from "./Navbar";
 import AppRoutes from "./Routes/Routes";
 
