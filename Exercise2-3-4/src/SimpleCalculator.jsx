@@ -37,26 +37,35 @@ function Calculator() {
   return (
     <div>
       <form onSubmit={calculateResult}>
-        <input
-          type="number"
-          name="firstNumber"
-          value={firstNumber}
-          onChange={handleInputChange}
-          placeholder="First number"
-        />
-        <select name="operator" value={operator} onChange={handleInputChange}>
-          <option value="+">+</option>
-          <option value="-">-</option>
-          <option value="*">*</option>
-          <option value="/">/</option>
-        </select>
-        <input
-          type="number"
-          name="secondNumber"
-          value={secondNumber}
-          onChange={handleInputChange}
-          placeholder="Second number"
-        />
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <input
+            type="number"
+            name="firstNumber"
+            value={firstNumber}
+            onChange={handleInputChange}
+            placeholder="First number"
+            style={{ backgroundColor: "white", color: "black" }} // Override styles
+          />
+          <select
+            name="operator"
+            value={operator}
+            onChange={handleInputChange}
+            style={{ color: "black" }} // Override styles
+          >
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+          </select>
+          <input
+            type="number"
+            name="secondNumber"
+            value={secondNumber}
+            onChange={handleInputChange}
+            placeholder="Second number"
+            style={{ backgroundColor: "white", color: "black" }} // Override styles
+          />
+        </div>
         <button>=</button>
       </form>
       <div>{result}</div>

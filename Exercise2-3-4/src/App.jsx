@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { UserContext } from "./UserContext";
+import { LoginProvider } from "./UserContext";
+
 import AppRoutes from "./Routes/AppRoutes";
 import NavBar from "./Navbar";
 
@@ -7,10 +8,10 @@ function App() {
   const [userEmail, setUserEmail] = useState(null);
 
   return (
-    <UserContext.Provider value={{ userEmail, setUserEmail }}>
+    <LoginProvider value={{ userEmail, setUserEmail }}>
       <NavBar></NavBar>
       <AppRoutes />
-    </UserContext.Provider>
+    </LoginProvider>
   );
 }
 

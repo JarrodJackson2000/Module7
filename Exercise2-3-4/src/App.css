@@ -72,6 +72,8 @@
   color: inherit;
   text-transform: uppercase;
   transition: color var(--transition-speed);
+  font-size: 1.2em;
+  line-height: 1.5;
 }
 
 .NavBar ul li a:hover {
