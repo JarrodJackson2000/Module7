@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Button, TextField, Box, Typography } from "@mui/material";
 
 function AddCatForm({ stateProp }) {
   const [submitResult, setSubmitResult] = useState("");
@@ -11,7 +12,7 @@ function AddCatForm({ stateProp }) {
     } else if (!e.target.imageUrl.value) {
       setSubmitResult("You must enter Image Url:");
     } else {
-      setSubmitResult("Submitted successfuly");
+      setSubmitResult("Submitted successfully");
       stateProp((originalCats) => [
         ...originalCats,
         {
@@ -24,26 +25,36 @@ function AddCatForm({ stateProp }) {
     }
   };
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Name: </label>
-          <input type="text" name="firstName" id="firstName"></input>
-        </div>
-        <div>
-          <label>Latin Name: </label>
-          <input type="text" name="latinName" id="latinName"></input>
-        </div>
-        <div>
-          <label>Image URL: </label>
-          <input type="text" name="imageUrl" id="imageUrl"></input>
-        </div>
-        <div>
-          <button>Submit</button>
-        </div>
-        <div>{submitResult}</div>
-      </form>
-    </>
+    <Box
+      component="form"
+      onSubmit={handleSubmit}
+      noValidate
+      autoComplete="off"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        height: "35vh",
+      }}
+    >
+      <Typography variant="h4">Add a new cat</Typography>
+      <Box mb={2}>
+        <TextField id="firstName" label="Name" variant="outlined" />
+      </Box>
+      <Box mb={2}>
+        <TextField id="latinName" label="Latin Name" variant="outlined" />
+      </Box>
+      <Box mb={2}>
+        <TextField id="imageUrl" label="Image URL" variant="outlined" />
+      </Box>
+      <Box mb={2}>
+        <Button type="submit" variant="contained">
+          Submit
+        </Button>
+      </Box>
+      <div>{submitResult}</div>
+    </Box>
   );
 }
 

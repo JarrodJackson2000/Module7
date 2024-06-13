@@ -1,15 +1,16 @@
-import { MyMoodProvider } from "./CurrentMood";
+import React, { useState } from "react";
+import { UserContext } from "./UserContext";
+import AppRoutes from "./Routes/AppRoutes";
 import NavBar from "./Navbar";
-import AppRoutes from "./Routes/Routes";
 
 function App() {
+  const [userEmail, setUserEmail] = useState(null);
+
   return (
-    <>
-      <MyMoodProvider>
-        <NavBar></NavBar>
-        <AppRoutes />
-      </MyMoodProvider>
-    </>
+    <UserContext.Provider value={{ userEmail, setUserEmail }}>
+      <NavBar></NavBar>
+      <AppRoutes />
+    </UserContext.Provider>
   );
 }
 

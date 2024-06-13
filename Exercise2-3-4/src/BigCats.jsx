@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import "./BigCats.css";
 import SingleCats from "./SingleCats";
 import AddCatForm from "./AddCatForm";
+import "./BigCats.css"; // Import the CSS file for styling
 
 const addImageUrls = (cats) => {
   const imageUrls = {
@@ -66,6 +68,13 @@ function BigCats() {
 
   return (
     <>
+      <AddCatForm stateProp={setCats}></AddCatForm>
+      <div>
+        <button onClick={sortAlphabetically}>Sort Alphabetically</button>
+        <button onClick={reverseOrder}>Reverse Order</button>
+        <button onClick={sortPanthera}>Sort by Panthera Species</button>
+        <button onClick={resetList}>Reset</button>
+      </div>
       <div className="BigCats componentBox">
         <ul>
           {cats.map((cat) => (
@@ -80,13 +89,6 @@ function BigCats() {
           ))}
         </ul>
       </div>
-      <div>
-        <button onClick={sortAlphabetically}>Sort Alphabetically</button>
-        <button onClick={reverseOrder}>Reverse Order</button>
-        <button onClick={sortPanthera}>Sort by Panthera Species</button>
-        <button onClick={resetList}>Reset</button>
-      </div>
-      <AddCatForm stateProp={setCats}></AddCatForm>
     </>
   );
 }
